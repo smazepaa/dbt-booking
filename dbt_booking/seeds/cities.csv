@@ -1,0 +1,501 @@
+"city_id","name","country_id"
+1,Millerside,114
+2,Lawrenceshire,126
+3,North Benjamin,183
+4,Jasonburgh,178
+5,Port Wendy,18
+6,Keithfort,146
+7,Lake Nancy,191
+8,Mooremouth,66
+9,Lake Rogerbury,124
+10,Port Brendamouth,78
+11,Suttonburgh,94
+12,New Barbarafort,59
+13,Yorkshire,176
+14,Perezmouth,194
+15,Stephensonport,171
+16,Troyberg,182
+17,West Gabriella,182
+18,West Christophershire,135
+19,Port Maria,145
+20,East Rebecca,186
+21,Mitchellberg,83
+22,Markview,166
+23,Port Eric,98
+24,Timothychester,57
+25,Stevenburgh,120
+26,Brendahaven,138
+27,Scotttown,173
+28,Lake Dawnstad,183
+29,West Cameronchester,192
+30,Andersonmouth,40
+31,Jonathonside,53
+32,Johnnyhaven,134
+33,Lindatown,66
+34,Amytown,51
+35,New James,101
+36,Danielland,14
+37,Henryfurt,44
+38,Lake Fernandofort,96
+39,North Brittanymouth,53
+40,New Debraport,16
+41,South Melinda,137
+42,Kaylaport,108
+43,East Jenniferborough,34
+44,Lake Bruce,118
+45,Smithborough,171
+46,Johnburgh,79
+47,Sarabury,98
+48,Lake Sergioshire,58
+49,East Sierrastad,20
+50,Bernardberg,174
+51,Jasonhaven,150
+52,Lake Tannerland,125
+53,Harmonfort,146
+54,Matthewhaven,183
+55,West Kristieborough,132
+56,Lake Emilyton,105
+57,Ninamouth,122
+58,Clairebury,34
+59,Lake William,81
+60,Martinezton,94
+61,Port Heather,190
+62,Jacquelinehaven,19
+63,Clineshire,57
+64,Thompsonstad,188
+65,East Amy,95
+66,Matthewside,151
+67,Andrewhaven,166
+68,Beverlymouth,65
+69,Candaceborough,23
+70,New Juliebury,159
+71,Fergusonfort,70
+72,New Melinda,128
+73,Dayside,49
+74,Jenniferfort,103
+75,New Briannaton,150
+76,Ashleyville,173
+77,Justinland,137
+78,East Karen,106
+79,Sanchezmouth,84
+80,Heatherfurt,167
+81,New Laurenland,125
+82,Booneshire,47
+83,Bakershire,94
+84,North Jeffrey,186
+85,Lamside,35
+86,Ramoston,181
+87,Hamiltonton,76
+88,North Briantown,85
+89,Mackenzietown,100
+90,West Ariel,15
+91,Chrishaven,163
+92,West Joshua,193
+93,West Christineburgh,68
+94,West Jose,142
+95,Fitzgeraldport,160
+96,Jonmouth,9
+97,Port Dawnburgh,80
+98,Robertland,177
+99,North Brian,130
+100,Port Kyle,141
+101,Port Albert,101
+102,South Candace,96
+103,North Fernando,57
+104,West Haileymouth,189
+105,West Lisafurt,43
+106,North Jessicachester,7
+107,New Nicole,172
+108,South Michelle,147
+109,North Colleenside,102
+110,Port Sherry,90
+111,New Ericabury,153
+112,West Cynthia,68
+113,Smithside,65
+114,South Ryan,189
+115,West Gordon,153
+116,East Meganside,20
+117,Lake Melissa,86
+118,Ryanfurt,152
+119,Port Theresa,83
+120,Wilsonview,178
+121,East Richard,137
+122,Clarkfort,72
+123,Mitchellberg,146
+124,Hernandezshire,150
+125,South Monicaside,162
+126,Douglaston,48
+127,Lake Michael,192
+128,South Michaelchester,16
+129,Morrisbury,30
+130,East Toni,89
+131,East Troy,29
+132,Figueroafurt,152
+133,West Stephanie,11
+134,New Tinaville,66
+135,Lake Philiptown,193
+136,Theresachester,133
+137,Josephton,63
+138,Lake Tannerview,84
+139,Cherylton,185
+140,East Marco,32
+141,Daniellemouth,41
+142,Port Dillon,177
+143,East Benjaminton,155
+144,Smithport,29
+145,North Richard,67
+146,Dianafort,46
+147,Brookeport,77
+148,Vanceland,40
+149,Martinezfurt,129
+150,Port Vanessachester,137
+151,Joannberg,19
+152,North Jason,28
+153,Jameshaven,173
+154,Christianport,185
+155,Port William,172
+156,Heatherberg,126
+157,Martinview,193
+158,Lake Pamela,52
+159,West Yolandaside,135
+160,West Annetteland,141
+161,Lake Jeanland,176
+162,Ellishaven,61
+163,Hancockside,103
+164,Fergusonshire,146
+165,East Kevin,74
+166,Port Troy,64
+167,North Anthonyfort,154
+168,Morganburgh,31
+169,South Jessicaville,7
+170,New Nicholasside,86
+171,Ballland,103
+172,Karenton,199
+173,North Stephen,34
+174,Port Tristanland,98
+175,Port Joelmouth,172
+176,Normanview,56
+177,South Thomas,85
+178,Thompsonchester,181
+179,Bauerburgh,127
+180,Abigailborough,151
+181,East Brandyburgh,47
+182,Brooksville,118
+183,Gloriachester,82
+184,Darinville,195
+185,Kelseystad,168
+186,Jackieburgh,199
+187,Parksview,94
+188,New Victorstad,155
+189,Taylorfort,156
+190,Littlestad,160
+191,East Nicholasberg,18
+192,Port Laura,195
+193,Nunezhaven,43
+194,Keithside,162
+195,Sandrafort,135
+196,Hodgesbury,189
+197,South Amandaberg,186
+198,Lake Ericbury,39
+199,New Rebecca,159
+200,Richardport,152
+201,Lake Michaelstad,99
+202,Teresaberg,109
+203,Lake Allenland,8
+204,New Hollyfort,48
+205,Clarkfurt,168
+206,West Thomas,97
+207,West Timothy,19
+208,Norrisbury,120
+209,Vasquezburgh,21
+210,Richardborough,79
+211,Joelchester,88
+212,New Stacey,166
+213,Wesleybury,141
+214,Wilsonland,121
+215,Jamesmouth,55
+216,Lake Nicholas,27
+217,East Bryan,126
+218,North James,18
+219,Port Samantha,128
+220,Brianburgh,176
+221,New Tammy,96
+222,Randyport,190
+223,South Loriton,109
+224,South Brittanybury,130
+225,Port Wendy,51
+226,East Robertburgh,167
+227,Lake Johnnyfort,38
+228,South Jon,117
+229,South Raymondside,51
+230,Wendyborough,95
+231,South Ryanshire,94
+232,North Christina,97
+233,Monicafort,73
+234,Melissatown,187
+235,West Joshuaport,44
+236,West Brendaburgh,42
+237,East Daniel,59
+238,Ericberg,43
+239,Whitneymouth,141
+240,South Barbaraland,49
+241,Dixonshire,57
+242,Estesberg,143
+243,Mcconnellview,99
+244,Thomaston,91
+245,Guzmanport,109
+246,West Kelsey,38
+247,North Traceyside,36
+248,West Garytown,2
+249,West Brittanystad,192
+250,New Brett,194
+251,Hartstad,115
+252,Tylermouth,122
+253,Burchmouth,113
+254,Alexandrahaven,78
+255,South Nancy,95
+256,South Michele,98
+257,Cruzburgh,65
+258,Matthewmouth,188
+259,Ortegachester,25
+260,New Nicolechester,200
+261,Brookshaven,106
+262,West Vanessaberg,4
+263,Banksberg,137
+264,Lauriechester,163
+265,South Stephanie,187
+266,Leeside,45
+267,Frankbury,106
+268,New Larry,144
+269,West Gary,27
+270,West Kristen,148
+271,Macdonaldshire,130
+272,South Travis,113
+273,Hannaville,194
+274,Jasonmouth,18
+275,South Benjamin,96
+276,Curtisbury,191
+277,East Sabrina,134
+278,Conleyport,17
+279,Martinland,174
+280,West Sandramouth,189
+281,North Nicholas,104
+282,Brandymouth,135
+283,Martinezmouth,156
+284,Josephmouth,121
+285,Larryfort,67
+286,Williamschester,140
+287,Port Williamburgh,93
+288,Port Jameschester,144
+289,Hawkinsmouth,39
+290,North Traceyhaven,187
+291,Ericview,181
+292,Latoyaborough,196
+293,Kathleenmouth,46
+294,Meganhaven,107
+295,South Katherinestad,168
+296,Johnsonside,27
+297,Vanghaven,54
+298,Delacruzmouth,69
+299,Thomasfort,150
+300,Richardshire,33
+301,Port Anthonyton,3
+302,East Randyton,199
+303,New Jamesview,74
+304,West Shawnamouth,50
+305,North Sandra,79
+306,Davisborough,11
+307,Port Jamiefort,154
+308,Robinsonchester,33
+309,Courtneyland,122
+310,Jacksonland,39
+311,Travisfurt,40
+312,New Robert,33
+313,Sandraberg,167
+314,Youngchester,154
+315,New Julie,139
+316,Moorefort,154
+317,Seanton,5
+318,Nealmouth,111
+319,Hannahland,195
+320,Jeffersonfurt,119
+321,Aliciahaven,176
+322,New Marcusshire,86
+323,Port Amberview,128
+324,Conniefurt,94
+325,Lake James,122
+326,Nicholehaven,103
+327,South Reginaldport,37
+328,Kathleenville,192
+329,Lake Jennifer,87
+330,Travismouth,31
+331,East Joseph,96
+332,Guerrerofort,40
+333,Woodardmouth,137
+334,Lake Rhondaborough,112
+335,Mcintoshbury,57
+336,North Charles,142
+337,Port Christon,49
+338,North Dennis,71
+339,South Virginiamouth,114
+340,West Haleytown,157
+341,Bryanmouth,12
+342,Pricehaven,148
+343,Emmaborough,116
+344,Velazquezton,177
+345,New Leonberg,165
+346,North Ashleyville,1
+347,South Victorialand,152
+348,Oscarside,88
+349,Loweborough,2
+350,Lake Jeffrey,63
+351,Lake Robert,47
+352,West Sherry,153
+353,Brownbury,26
+354,Erikaview,107
+355,Butlerbury,14
+356,Lake Ashleyton,59
+357,Port Brittany,46
+358,Wolfefort,53
+359,Ericmouth,52
+360,East Richard,107
+361,New Richardside,12
+362,South Sierrafurt,117
+363,Brownside,140
+364,Drakestad,113
+365,Mullinstown,175
+366,East Brian,80
+367,Robinmouth,55
+368,North Steven,103
+369,Port Matthew,101
+370,Wardview,185
+371,Beasleyport,167
+372,East John,8
+373,North Ruthfurt,8
+374,Port Jackie,136
+375,Lake Tiffanyfurt,154
+376,Lake Gregory,180
+377,Port Adam,59
+378,Davidbury,154
+379,Webbchester,147
+380,Robertsonton,24
+381,Maryport,58
+382,Hillton,22
+383,Karifort,77
+384,Lake Jill,143
+385,New Charles,123
+386,Rowlandstad,172
+387,New Melanieside,102
+388,Port Randallton,165
+389,Chasebury,23
+390,West Gregory,3
+391,Solisfort,75
+392,Ellenview,105
+393,Hannahville,153
+394,New Ronaldshire,149
+395,South William,20
+396,South Jenniferborough,20
+397,Heatherfort,30
+398,Aaronland,48
+399,Combsstad,173
+400,Michaelburgh,177
+401,Fullerburgh,197
+402,Lake Christophertown,9
+403,Loweland,69
+404,Fryemouth,123
+405,West Emilyberg,193
+406,Lake Christian,181
+407,Port Tammyport,125
+408,East Jennifer,22
+409,New Andrewport,180
+410,Alexton,58
+411,Port Cindy,50
+412,Sarahton,170
+413,Staceystad,37
+414,Rojasville,133
+415,West Juan,28
+416,Nguyenside,46
+417,Matthewshire,128
+418,West Jacobborough,28
+419,Hunterfort,144
+420,Marcusfurt,176
+421,New Veronicamouth,194
+422,West Francisville,141
+423,West Terranceshire,183
+424,Amymouth,145
+425,Richardstad,117
+426,West Christopher,25
+427,North Beth,47
+428,West Danielside,67
+429,Jerryberg,188
+430,West Lee,56
+431,Williamstown,80
+432,Alvarezland,121
+433,Rogerston,81
+434,Williamberg,9
+435,Hayeston,131
+436,South Alyssa,138
+437,Ericton,159
+438,Martinezburgh,193
+439,Bridgettown,1
+440,Jacksonchester,127
+441,Lake Dylan,142
+442,New Wendy,180
+443,New Christopherborough,12
+444,Griffithfurt,160
+445,Port Erin,137
+446,East Davidmouth,184
+447,North Kevin,55
+448,South Michaelside,96
+449,West Ashleybury,188
+450,East Sandra,176
+451,North Jerryport,199
+452,Carlosstad,56
+453,Lake Erica,78
+454,Lake Adamburgh,61
+455,Michaelview,53
+456,Suzanneburgh,29
+457,New Chase,39
+458,Campbellshire,19
+459,Lake Williebury,153
+460,South Paulaland,22
+461,South Kelly,140
+462,Port Jacqueline,100
+463,East Charlesshire,121
+464,Port Elizabethstad,12
+465,Gailtown,128
+466,Gonzalezmouth,118
+467,South Angela,123
+468,Thomasfort,131
+469,Bethbury,37
+470,Justinfurt,12
+471,East Jonathan,180
+472,Lake Tammy,195
+473,Angelamouth,103
+474,New Danielshire,43
+475,Ryanton,125
+476,Port Sarah,20
+477,Charlesview,39
+478,Port Ashleymouth,101
+479,West Justin,54
+480,Christianchester,23
+481,Lake Brenda,194
+482,Jonesburgh,118
+483,Port Jean,76
+484,Johnsonton,180
+485,Jeffreyfort,111
+486,Ronaldborough,1
+487,Perezstad,118
+488,Hamiltonmouth,159
+489,Figueroaland,119
+490,Shahton,46
+491,Lake Michelletown,155
+492,Davidside,2
+493,Joneschester,164
+494,Cynthiabury,119
+495,Port Thomas,140
+496,Howardville,130
+497,Mcdanielview,88
+498,Martintown,139
+499,Hamiltonfort,34
+500,South Nancyfurt,56

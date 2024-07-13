@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: dbt_booking
+    tables:
+      - name: countries
+      - name: cities
+      - name: hotels
+      - name: rooms
+      - name: customers
+      - name: reservations
+      - name: reservation_rooms
