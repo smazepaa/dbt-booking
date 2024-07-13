@@ -13,6 +13,12 @@ hotels as (
         address as hotel_address
     from {{ ref('stg_hotels') }}
 ),
+hotel_city as (
+    select
+        hotel_id,
+        city_id
+    from {{ ref('stg_hotel_city') }}
+),
 cities as (
     select
         city_id,
@@ -26,13 +32,18 @@ countries as (
         name as country_name
     from {{ ref('stg_countries') }}
 ),
+reservation_rooms as (
+    select
+        reservation_id,
+        room_id
+    from {{ ref('stg_reservation_rooms') }}
+),
 reservations as (
     select
         reservation_id,
-        room_id,
         date_checkin,
         date_checkout
-    from {{ ref('stg_reservation_rooms') }}
+    from {{ ref('stg_reservations') }}
 )
 select
     ro.room_id,
@@ -46,9 +57,11 @@ select
     max(r.date_checkout) as reservation_checkout
 from rooms ro
 join hotels h on ro.hotel_id = h.hotel_id
-join cities c on h.city_id = c.city_id
+join hotel_city hc on h.hotel_id = hc.hotel_id
+join cities c on hc.city_id = c.city_id
 join countries co on c.country_id = co.country_id
-left join reservations r on ro.room_id = r.room_id
+left join reservation_rooms rr on ro.room_id = rr.room_id
+left join reservations r on rr.reservation_id = r.reservation_id
 group by
     ro.room_id,
     ro.room_class,
