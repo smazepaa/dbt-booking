@@ -3,10 +3,292 @@ version: 2
 sources:
   - name: dbt_booking
     tables:
-      - name: countries
-      - name: cities
-      - name: hotels
-      - name: rooms
-      - name: customers
-      - name: reservations
-      - name: reservation_rooms
+      - name: raw_countries
+        description: "Table containing information about countries."
+        columns:
+          - name: country_id
+            description: "Unique identifier for each country."
+            data_type: BIGINT UNSIGNED
+          - name: name
+            description: "Name of the country."
+            data_type: VARCHAR(100)
+
+      - name: raw_cities
+        description: "Table containing information about cities."
+        columns:
+          - name: city_id
+            description: "Unique identifier for each city."
+            data_type: BIGINT UNSIGNED
+          - name: name
+            description: "Name of the city."
+            data_type: VARCHAR(100)
+          - name: country_id
+            description: "Foreign key to the country."
+            data_type: BIGINT UNSIGNED
+
+      - name: raw_customers
+        description: "Table containing information about customers."
+        columns:
+          - name: customer_id
+            description: "Unique identifier for each customer."
+            data_type: BIGINT UNSIGNED
+          - name: name
+            description: "Name of the customer."
+            data_type: VARCHAR(100)
+          - name: email
+            description: "Email of the customer."
+            data_type: VARCHAR(100)
+          - name: phone_number
+            description: "Phone number of the customer."
+            data_type: VARCHAR(15)
+
+      - name: raw_hotels
+        description: "Table containing information about hotels."
+        columns:
+          - name: hotel_id
+            description: "Unique identifier for each hotel."
+            data_type: BIGINT UNSIGNED
+          - name: name
+            description: "Name of the hotel."
+            data_type: VARCHAR(100)
+          - name: address
+            description: "Address of the hotel."
+            data_type: TEXT
+          - name: phone_number
+            description: "Phone number of the hotel."
+            data_type: VARCHAR(15)
+
+      - name: raw_hotel_city
+        description: "Table to ensure many-to-many relationship between hotels and cities."
+        columns:
+          - name: hotel_id
+            description: "Foreign key to the hotel."
+            data_type: BIGINT UNSIGNED
+          - name: city_id
+            description: "Foreign key to the city."
+            data_type: BIGINT UNSIGNED
+
+      - name: raw_rooms
+        description: "Table containing information about hotel rooms."
+        columns:
+          - name: room_id
+            description: "Unique identifier for each room."
+            data_type: BIGINT UNSIGNED
+          - name: hotel_id
+            description: "Foreign key to the hotel."
+            data_type: BIGINT UNSIGNED
+          - name: class
+            description: "Class of the room."
+            data_type: VARCHAR(50)
+          - name: price
+            description: "Price of the room."
+            data_type: DECIMAL(10, 2)
+
+      - name: raw_reservations
+        description: "Table containing information about reservations."
+        columns:
+          - name: reservation_id
+            description: "Unique identifier for each reservation."
+            data_type: BIGINT UNSIGNED
+          - name: customer_id
+            description: "Foreign key to the customer."
+            data_type: BIGINT UNSIGNED
+          - name: hotel_id
+            description: "Foreign key to the hotel."
+            data_type: BIGINT UNSIGNED
+          - name: confirmed
+            description: "Reservation confirmation status."
+            data_type: BOOLEAN
+          - name: date_checkin
+            description: "Check-in date."
+            data_type: DATE
+          - name: date_checkout
+            description: "Check-out date."
+            data_type: DATE
+
+      - name: raw_reservation_rooms
+        description: "Table to ensure many-to-many relationship between reservations and rooms."
+        columns:
+          - name: reservation_id
+            description: "Foreign key to the reservation."
+            data_type: BIGINT UNSIGNED
+          - name: room_id
+            description: "Foreign key to the room."
+            data_type: BIGINT UNSIGNED
+
+models:
+  - name: stg_countries
+    description: "Stage model for countries data."
+    columns:
+      - name: country_id
+        description: "Unique identifier for each country."
+        data_type: BIGINT UNSIGNED
+      - name: name
+        description: "Name of the country."
+        data_type: VARCHAR(100)
+
+  - name: stg_cities
+    description: "Stage model for cities data."
+    columns:
+      - name: city_id
+        description: "Unique identifier for each city."
+        data_type: BIGINT UNSIGNED
+      - name: name
+        description: "Name of the city."
+        data_type: VARCHAR(100)
+      - name: country_id
+        description: "Foreign key to the country."
+        data_type: BIGINT UNSIGNED
+
+  - name: stg_customers
+    description: "Stage model for customers data."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer."
+        data_type: BIGINT UNSIGNED
+      - name: name
+        description: "Name of the customer."
+        data_type: VARCHAR(100)
+      - name: email
+        description: "Email of the customer."
+        data_type: VARCHAR(100)
+      - name: phone_number
+        description: "Phone number of the customer."
+        data_type: VARCHAR(15)
+
+  - name: stg_hotels
+    description: "Stage model for hotels data."
+    columns:
+      - name: hotel_id
+        description: "Unique identifier for each hotel."
+        data_type: BIGINT UNSIGNED
+      - name: name
+        description: "Name of the hotel."
+        data_type: VARCHAR(100)
+      - name: address
+        description: "Address of the hotel."
+        data_type: TEXT
+      - name: phone_number
+        description: "Phone number of the hotel."
+        data_type: VARCHAR(15)
+
+  - name: stg_hotel_city
+    description: "Stage model for the many-to-many relationship between hotels and cities."
+    columns:
+      - name: hotel_id
+        description: "Foreign key to the hotel."
+        data_type: BIGINT UNSIGNED
+      - name: city_id
+        description: "Foreign key to the city."
+        data_type: BIGINT UNSIGNED
+
+  - name: stg_rooms
+    description: "Stage model for rooms data."
+    columns:
+      - name: room_id
+        description: "Unique identifier for each room."
+        data_type: BIGINT UNSIGNED
+      - name: hotel_id
+        description: "Foreign key to the hotel."
+        data_type: BIGINT UNSIGNED
+      - name: class
+        description: "Class of the room."
+        data_type: VARCHAR(50)
+      - name: price
+        description: "Price of the room."
+        data_type: DECIMAL(10, 2)
+
+  - name: stg_reservations
+    description: "Stage model for reservations data."
+    columns:
+      - name: reservation_id
+        description: "Unique identifier for each reservation."
+        data_type: BIGINT UNSIGNED
+      - name: customer_id
+        description: "Foreign key to the customer."
+        data_type: BIGINT UNSIGNED
+      - name: hotel_id
+        description: "Foreign key to the hotel."
+        data_type: BIGINT UNSIGNED
+      - name: confirmed
+        description: "Reservation confirmation status."
+        data_type: BOOLEAN
+      - name: date_checkin
+        description: "Check-in date."
+        data_type: DATE
+      - name: date_checkout
+        description: "Check-out date."
+        data_type: DATE
+
+  - name: stg_reservation_rooms
+    description: "Stage model for the many-to-many relationship between reservations and rooms."
+    columns:
+      - name: reservation_id
+        description: "Foreign key to the reservation."
+        data_type: BIGINT UNSIGNED
+      - name: room_id
+        description: "Foreign key to the room."
+        data_type: BIGINT UNSIGNED
+
+  - name: stg_hotel_city
+    description: "Stage model for the many-to-many relationship between hotels and cities."
+    columns:
+      - name: hotel_id
+        description: "Foreign key to the hotel."
+        data_type: BIGINT UNSIGNED
+      - name: city_id
+        description: "Foreign key to the city."
+        data_type: BIGINT UNSIGNED
+
+  - name: hotel_reservations
+    description: "Mart model for hotel reservations."
+    columns:
+      - name: reservation_id
+        description: "Unique identifier for each reservation."
+        data_type: BIGINT UNSIGNED
+      - name: customer_name
+        description: "Name of the customer."
+        data_type: VARCHAR(100)
+      - name: hotel_name
+        description: "Name of the hotel."
+        data_type: VARCHAR(100)
+      - name: date_checkin
+        description: "Check-in date."
+        data_type: DATE
+      - name: date_checkout
+        description: "Check-out date."
+        data_type: DATE
+      - name: confirmed
+        description: "Reservation confirmation status."
+        data_type: BOOLEAN
+
+  - name: room_availability
+    description: "Mart model for room availability."
+    columns:
+      - name: room_id
+        description: "Unique identifier for each room."
+        data_type: BIGINT UNSIGNED
+      - name: room_class
+        description: "Class of the room."
+        data_type: VARCHAR(50)
+      - name: room_price
+        description: "Price of the room."
+        data_type: DECIMAL(10, 2)
+      - name: hotel_name
+        description: "Name of the hotel."
+        data_type: VARCHAR(100)
+      - name: hotel_address
+        description: "Address of the hotel."
+        data_type: TEXT
+      - name: city_name
+        description: "Name of the city."
+        data_type: VARCHAR(100)
+      - name: country_name
+        description: "Name of the country."
+        data_type: VARCHAR(100)
+      - name: reservation_checkin
+        description: "Earliest check-in date of the reservation."
+        data_type: DATE
+      - name: reservation_checkout
+        description: "Latest check-out date of the reservation."
+        data_type: DATE
