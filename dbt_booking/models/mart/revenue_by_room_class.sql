@@ -21,7 +21,7 @@ reservation_rooms as (
 select
     r.room_class,
     count(distinct rr.reservation_id) as total_reservations,
-    sum(r.room_price * datediff('day', res.date_checkin, res.date_checkout)) as total_revenue
+    avg(r.room_price * datediff('day', res.date_checkin, res.date_checkout)) as average_revenue
 from rooms r
 join reservation_rooms rr on r.room_id = rr.room_id
 join reservations res on rr.reservation_id = res.reservation_id

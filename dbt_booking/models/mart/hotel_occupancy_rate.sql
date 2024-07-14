@@ -6,27 +6,33 @@ with reservations as (
         date_checkout
     from {{ ref('stg_reservations') }}
 ),
-rooms as (
-    select
-        room_id,
-        hotel_id
-    from {{ ref('stg_rooms') }}
-),
 hotels as (
     select
         hotel_id,
         name as hotel_name
     from {{ ref('stg_hotels') }}
+),
+hotel_reservations as (
+    select
+        hotel_id,
+        extract(month from date_checkin) as reservation_month,
+        extract(year from date_checkin) as reservation_year,
+        count(reservation_id) as monthly_reservations
+    from reservations
+    group by hotel_id, reservation_year, reservation_month
+),
+hotel_reservation_counts as (
+    select
+        hotel_id,
+        count(distinct reservation_year || '-' || reservation_month) as months_count,
+        sum(monthly_reservations) as total_reservations
+    from hotel_reservations
+    group by hotel_id
 )
 select
     h.hotel_id,
     h.hotel_name,
-    count(distinct r.room_id) as total_rooms,
-    count(distinct rr.reservation_id) as total_reservations,
-    round(count(distinct rr.reservation_id) * 100.0 / count(distinct r.room_id), 2) as occupancy_rate
+    round(hrc.total_reservations * 1.0 / hrc.months_count, 3) as avg_reservations_per_month
 from hotels h
-left join rooms r on h.hotel_id = r.hotel_id
-left join {{ ref('stg_reservation_rooms') }} rr on r.room_id = rr.room_id
-group by
-    h.hotel_id,
-    h.hotel_name
+left join hotel_reservation_counts hrc on h.hotel_id = hrc.hotel_id
+order by avg_reservations_per_month desc
