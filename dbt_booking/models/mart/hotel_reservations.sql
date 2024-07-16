@@ -16,14 +16,18 @@ customers as (
 ),
 hotels as (
     select
-        hotel_id,
-        name as hotel_name
-    from {{ ref('stg_hotels') }}
+        h.hotel_id,
+        h.name as hotel_name,
+        c.name as city_name
+    from {{ ref('stg_hotels') }} h
+    join {{ ref('stg_hotel_city') }} hc on h.hotel_id = hc.hotel_id
+    join {{ ref('stg_cities') }} c on hc.city_id = c.city_id
 )
 select
     r.reservation_id,
     c.customer_name,
     h.hotel_name,
+    h.city_name,
     r.date_checkin,
     r.date_checkout,
     r.confirmed
