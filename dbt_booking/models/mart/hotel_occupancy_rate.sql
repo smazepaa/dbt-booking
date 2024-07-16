@@ -8,9 +8,12 @@ with reservations as (
 ),
 hotels as (
     select
-        hotel_id,
-        name as hotel_name
-    from {{ ref('stg_hotels') }}
+        h.hotel_id,
+        h.name as hotel_name,
+        c.name as city_name
+    from {{ ref('stg_hotels') }} h
+    join {{ ref('stg_hotel_city') }} hc on h.hotel_id = hc.hotel_id
+    join {{ ref('stg_cities') }} c on hc.city_id = c.city_id
 ),
 hotel_reservations as (
     select
@@ -30,7 +33,7 @@ hotel_reservation_counts as (
     group by hotel_id
 )
 select
-    h.hotel_id,
+    h.city_name,
     h.hotel_name,
     round(hrc.total_reservations * 1.0 / hrc.months_count, 3) as avg_reservations_per_month
 from hotels h

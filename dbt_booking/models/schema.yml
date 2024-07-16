@@ -396,32 +396,21 @@ models:
         data_type: DATE
 
   - name: hotel_occupancy_rate
-    description: "Mart model calculating the occupancy rate for each hotel."
+    description: "Model calculating the average number of reservations per month for each hotel, grouped by city."
     columns:
-      - name: hotel_id
-        description: "Unique identifier for each hotel."
-        data_type: BIGINT UNSIGNED
+      - name: city_name
+        description: "Name of the city."
+        data_type: VARCHAR(100)
         tests:
           - not_null
-          - unique
       - name: hotel_name
         description: "Name of the hotel."
         data_type: VARCHAR(100)
         tests:
           - not_null
-      - name: total_rooms
-        description: "Total number of rooms in the hotel."
-        data_type: INT
-        tests:
-          - not_null
-      - name: total_reservations
-        description: "Total number of reservations for the hotel."
-        data_type: INT
-        tests:
-          - not_null
-      - name: occupancy_rate
-        description: "Occupancy rate of the hotel."
-        data_type: DECIMAL(5, 2)
+      - name: avg_reservations_per_month
+        description: "Average number of reservations per month for the hotel."
+        data_type: DECIMAL(5, 3)
         tests:
           - not_null
 
@@ -444,8 +433,8 @@ models:
         tests:
           - not_null
 
-  - name: reservation_trends
-    description: "Mart model for analyzing reservation trends over time."
+  - name: hotel_reservation_trends
+    description: "Mart model for analyzing reservation trends over time, filtered by hotel name and city."
     columns:
       - name: month
         description: "Month of the reservation."
@@ -465,5 +454,24 @@ models:
       - name: avg_stay_length
         description: "Average length of stay for reservations in the month, in days."
         data_type: DECIMAL(5, 2)
+        tests:
+          - not_null
+
+  - name: monthly_revenue
+    description: "Mart model calculating average monthly revenue per hotel."
+    columns:
+      - name: hotel_name
+        description: "Name of the hotel."
+        data_type: VARCHAR(100)
+        tests:
+          - not_null
+      - name: total_revenue
+        description: "Total revenue for the hotel in the given month."
+        data_type: DECIMAL(10, 2)
+        tests:
+          - not_null
+      - name: average_revenue_per_month
+        description: "Average revenue per month for the hotel."
+        data_type: DECIMAL(10, 2)
         tests:
           - not_null
